@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Danh sách các nhà tài trợ nhân dịp kỷ niệm 60 năm thành lập trường THPT Bá Thước 1966–2026.">
+  <title>Nhà tài trợ | THPT Bá Thước 1966–2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <nav class="nav container">
+      <a class="brand" href="#trang-chu">
+        <img src="assets/logo-60-nam.png" alt="Logo 60 năm THPT Bá Thước">
+        <div>
+          <strong>THPT BÁ THƯỚC</strong>
+          <span>1966 — 2026</span>
+        </div>
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-label="Mở menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#trang-chu">Trang chủ</a>
+        <a href="#danh-sach">Danh sách tài trợ</a>
+        <a href="#tra-cuu">Tra cứu</a>
+        <a href="#gioi-thieu">Giới thiệu</a>
+      </div>
+    </nav>
+
+    <div class="hero-content container" id="trang-chu">
+      <div class="hero-copy">
+        <p class="eyebrow">KỶ NIỆM 60 NĂM THÀNH LẬP TRƯỜNG</p>
+        <h1>Tri ân những tấm lòng<br><em>đồng hành cùng nhà trường</em></h1>
+        <p class="hero-text">Danh sách các tổ chức, cá nhân, cựu học sinh và các lớp đã đóng góp cho chương trình kỷ niệm 60 năm thành lập THPT Bá Thước.</p>
+        <a class="primary-btn" href="#danh-sach">Xem danh sách <span>↓</span></a>
+      </div>
+      <div class="hero-logo">
+        <div class="logo-ring"><img src="assets/logo-60-nam.png" alt="60 năm THPT Bá Thước"></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="stats container" aria-label="Tổng quan">
+      <div class="stat-card"><span class="stat-icon">👥</span><div><b id="statCount">16</b><small>lượt tài trợ</small></div></div>
+      <div class="stat-card"><span class="stat-icon">💰</span><div><b id="statMoney">112,6 triệu</b><small>tiền tài trợ</small></div></div>
+      <div class="stat-card"><span class="stat-icon">🎁</span><div><b id="statGoods">2</b><small>loại vật phẩm</small></div></div>
+      <div class="stat-card"><span class="stat-icon">🎓</span><div><b>60 năm</b><small>1966 — 2026</small></div></div>
+    </section>
+
+    <section class="intro container" id="gioi-thieu">
+      <div>
+        <p class="section-kicker">DẤU ẤN 1966 — 2026</p>
+        <h2>Chung một mái trường,<br><span>chung một hành trình</span></h2>
+      </div>
+      <p>Website được xây dựng nhằm công khai, tra cứu và lưu giữ thông tin các nhà tài trợ nhân dịp Lễ kỷ niệm 60 năm thành lập trường THPT Bá Thước. Xin trân trọng cảm ơn những đóng góp quý báu của quý cựu học sinh, các lớp và các cá nhân.</p>
+    </section>
+
+    <section class="directory" id="danh-sach">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">DANH SÁCH NHÀ TÀI TRỢ</p>
+            <h2>Những người đã đồng hành</h2>
+          </div>
+          <div class="result-count" id="resultCount">16 kết quả</div>
+        </div>
+
+        <div class="filters" id="tra-cuu">
+          <div class="search-box">
+            <span>⌕</span>
+            <input id="searchInput" type="search" placeholder="Tìm theo khóa, lớp, cá nhân, người đại diện..." autocomplete="off">
+          </div>
+          <select id="khoaFilter" aria-label="Chọn khóa">
+            <option value="">Tất cả khóa</option>
+          </select>
+          <select id="lopFilter" aria-label="Chọn lớp">
+            <option value="">Tất cả lớp</option>
+          </select>
+          <select id="namFilter" aria-label="Chọn năm tài trợ">
+            <option value="">Tất cả năm</option>
+          </select>
+          <button class="reset-btn" id="resetBtn">Xóa lọc</button>
+        </div>
+
+        <div class="chips" id="chips"></div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>TT</th>
+                <th>Năm</th>
+                <th>Nhà tài trợ</th>
+                <th>Thông tin</th>
+                <th class="money-col">Tiền tài trợ / quà</th>
+                <th>Vật phẩm</th>
+                <th>Ghi chú</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+          <div class="empty" id="emptyState" hidden>
+            <div>⌕</div>
+            <h3>Không tìm thấy kết quả</h3>
+            <p>Hãy thử từ khóa khác hoặc xóa bớt điều kiện lọc.</p>
+          </div>
+        </div>
+
+        <div class="mobile-cards" id="mobileCards"></div>
+      </div>
+    </section>
+
+    <section class="thanks">
+      <div class="container thanks-inner">
+        <div>
+          <p class="section-kicker">TRÂN TRỌNG TRI ÂN</p>
+          <h2>Cảm ơn vì đã góp một phần<br>vào dấu mốc <span>60 năm</span></h2>
+        </div>
+        <img src="assets/logo-60-nam.png" alt="THPT Bá Thước 60 năm">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div><strong>TRƯỜNG THPT BÁ THƯỚC</strong><span>Tự hào truyền thống · Vững bước tương lai</span></div>
+      <div>1966 — 2026 · Kỷ niệm 60 năm thành lập</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
